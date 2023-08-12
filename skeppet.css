@@ -1,0 +1,43 @@
+
+.gfg {
+    margin: 3%;
+    position: relative;
+}
+
+.styrbord-txt {
+    position: absolute;
+    top: 100px;
+    left: 280px;
+
+}
+
+.tillbaka-txt {
+    position: sticky;
+}
+
+.kock1 {
+  position: absolute;
+  top: 420px;
+  left: 170px;
+  display: none;
+}
+
+.kassett-kock1{
+  position: sticky;
+  top: 700px;
+  left: 320px;
+  display: none;
+}
+
+body{
+  background-image: url('jpg/skeppet1.jpg');
+  background-repeat: no-repeat;
+  background-size: 650px;
+  position: relative;
+
+
+}
+
+button.remove{
+
+}

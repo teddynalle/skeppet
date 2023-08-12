@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Malin Kjellgren, repetoar</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+  height: 100%;
+  color: #777;
+  line-height: 1.8;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+  background-image: url("/jpg/landskap.jpg");
+  min-height: 100%;
+}
+
+/* Second image (Portfolio) */
+.bgimg-2 {
+  background-image: url("/jpg/landskap.jpg");
+  min-height: 400px;
+}
+
+/* Third image (Contact) */
+.bgimg-3 {
+  background-image: url("/jpg/harpist.jpg");
+  min-height: 400px;
+}
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+
+</style>
+</head>
+<body>
+
+
+
+
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 w3-display-container" id="home">
+  <div class="w3-black w3-round-xlarge w3-display-middle" style="white-space:nowrap;">
+    <h1 class="w3-center w3-padding-large w3-xlarge w3-wide w3-animate-opacity w3-animate-fading w3-text-white">REPETOAR</h1>
+
+
+  </div>
+</div>
+
+<!-- denna tar oss runt hemsidan -->
+<div class=" w3-center w3-black" style="bottom:-16px">
+  <a href="#portfolio" class="w3-black w3-hover-white w3-panel w3-border w3-round-xlarge w3-bar-item w3-button ">Begravningar</a>
+
+  <a href="#kontakt" class="w3-panel w3-border w3-round-xlarge w3-black w3-hover-white w3-bar-item w3-button">Dop</a>
+
+  <a href="#kontakt" class="w3-panel w3-border w3-round-xlarge w3-black w3-hover-white w3-bar-item w3-button">Konserter</a>
+</div>
+
+
+<!--play audio-->
+
+<div class="">
+  <audio id="audio">
+    <source src="audio.mp3" type="audio/mpeg">
+  </audio>
+  <button id="playPauseBTN" onclick="playPause()" class="fa fa-play w3-button w3-hover-black"> Play</button>
+  <button class="fa fa-stop w3-button w3-hover-black" onclick="stop()"> Stop</button>
+</div>
+
+
+<!-- Container (About Section) -->
+<div class="w3-content w3-container w3-padding-64" id="begravningar">
+  <h2 class="w3-center ">Begravningar</h2>
+  <p class="w3-center"><em>Dessa stycken rekommender jag...</em></p>
+
+  <ul class="w3-ul w3-center">
+    <li class="w3-hover-black w3-round-xlarge" onclick="myFunction()" class"w3-button w3-black"> Bladibla av Bachibla
+
+    </li>
+    <div id="Demo" class="w3-dropdown-content">
+      <p class="w3-center">This is a paragraph</p>
+    </div>
+  </ul>
+  <div class="w3-row">
+    </div>
+
+
+
+
+
+
+<div class="w3-content w3-container w3-padding-64" id="bröllop">
+  <h3 class="w3-center">Dop</h3>
+  <p class="w3-center"><em>Dessa stycken rekommenderar jag...</em></p>
+  <li>Bladibla av Bachibla</li>
+  <div class="w3-row">
+    </div>
+
+<div class="w3-content w3-container w3-padding-64" id="dop">
+  <h3 class="w3-center">Konserter</h3>
+  <p class="w3-center"><em>Dessa stycken rekommenderar jag...</em></p>
+  <li>Bladibla av Bachibla</li>
+  <div class="w3-row">
+    </div>
+
+    <script>
+    // Modal Image Gallery
+    function onClick(element) {
+      document.getElementById("img01").src = element.src;
+      document.getElementById("modal01").style.display = "block";
+      var captionText = document.getElementById("caption");
+      captionText.innerHTML = element.alt;
+    }
+
+    // Change style of navbar on scroll
+    window.onscroll = function() {myFunction()};
+    function myFunction() {
+        var navbar = document.getElementById("myNavbar");
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+        } else {
+            navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+        }
+    }
+
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function toggleFunction() {
+        var x = document.getElementById("navDemo");
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+        }
+    }
+
+
+    //slideshow
+
+    function myFunction() {
+      var x = document.getElementById("Demo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+
+//min kod
+
+
+var audio = document.getElementById("audio");
+var playPauseBTN = document.getElementById("playPauseBTN");
+var count = 0;
+
+function playPause(){
+  if(count == 0){
+    count = 1;
+    audio.play();
+    playPauseBTN.innerHTML =" Pause";
+  }else{
+    count = 0;
+    audio.pause();
+    playPauseBTN.innerHTML =" Play";
+  }
+}
+
+
+function stop(){
+  playPause()
+  audio.pause();
+  audio.currentTime = 0;
+  playPauseBTN.innerHTML = " Play"
+}
+
+    </script>
+
+
+
+
+</body>
+</html>

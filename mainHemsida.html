@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<title>Malin Kjellgren</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-metro.css">
+<link rel="stylesheet" href="malin.css">
+
+</head>
+<body>
+
+
+
+
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 w3-display-container" id="home">
+<!-- knappar -->
+
+
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <!-- själva texten (malinkjellgren) -->
+    <h1 class="w3-text-white w3-wide w3-animate-opacity w3-center">MALIN</h1>
+    <h1 class="w3-text-white w3-wide w3-animate-opacity w3-center">KJELLGREN</h1>
+
+  </div>
+</div>
+
+<!-- denna tar oss runt hemsidan -->
+
+<div class="w3-top-middle w3-center w3-black " style="bottom:-16px">
+  <a href="#kontakt" class="w3-panel w3-border w3-round-xlarge w3-black w3-hover-white w3-bar-item w3-button">Kontakta mig</a>
+</div>
+
+
+
+  <div class="w3-display-container mySlides w3-margin w3-padding">
+
+  <div class="w3-container">
+    <h1 class="w3-center w3-text-black">Hej!</h1>
+    <p class="w3-center w3-text-black">Jag är en nyexaminerad harpist.</p>
+  </div>
+
+
+    <div class="w3-container">
+      <h2 class="w3-center w3-text-black">If It's Magic, av Stevie Wonder</h2>
+
+      <div class="w3-center w3-round-xlarge w3-container">
+        <audio id="audio">
+          <source src="malinHarpaIfitsmagic.mp3" type="audio/mpeg">
+        </audio>
+        <button id="playPauseBTN" onclick="playPause()" class="fa fa-play w3-button w3-round-large w3-hover-white w3-black"> Lyssna</button>
+        <button class="fa fa-stop w3-button w3-round-large w3-hover-white w3-black" onclick="stop()"> Stopp</button>
+
+        </div>
+      </div>
+<h2 class="w3-center w3-text-black">If It's Magic, av Stevie Wonder</h2>
+<div class="w3-container w3-center w3-margin">
+
+
+      <iframe class="w3-round-xlarge" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+              </iframe>
+</div>
+
+    </div>
+  </div>
+
+  </div>
+
+
+
+<!-- PROJEKT 2023 -->
+
+
+    <!--javascr -->
+
+
+
+    <div class="w3-row"></div>
+
+    </div>
+  </div>
+  <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+
+
+  <!-- kanske länk till youtube-kanal?? -->
+
+<!-- Third Parallax Image with Portfolio Text -->
+<div id="kontakt" class="bgimg-2 w3-display-container w3-opacity">
+  <div class="w3-display-middle">
+     <span class="w3-center w3-xxlarge w3-text-white w3-wide">KONTAKTA MIG</span>
+
+
+  </div>
+</div>
+
+<!-- Container (Contact Section) -->
+<div class="w3-black w3-content w3-container w3-padding" id="contact">
+  <h3 class="w3-center">KONTAKTINFORMATION</h3>
+  <p class="w3-center"><em></em></p>
+      <ul class="w3-ul w3-center">
+    <li > <a class="fa fa-envelope" href="mailto:malin.mi.kjellgren@gmail.com"> malin.mi.kjellgren@gmail.com</a></li>
+    <li ><a  href="tel:+07300303030"> <h1 class="fa fa-phone"> 0767943008</h1></a></li>
+    <li > <a class="fa fa-location-arrow"> Göteborg</a></li>
+    <li><a href="https://www.instagram.com" target="_blank" class="fa fa-instagram w3-button w3-round"></a> <a href="https://www.facebook.com" target="_blank" class="fa fa-facebook w3-button w3-round"></a></li>
+    <li><a href="#home" class="w3-button w3-border w3-round-xlarge w3-hover-black"><i class="fa fa-arrow-up w3-margin-right"></i>Hem igen</a></li>
+    </ul>
+  </div>
+
+<script src="malinHemsida.js"></script>
+
+<script>
+$(document).ready(function(){
+  $("#flip").click(function(){
+    $("#panel").slideToggle("slow");
+  });
+});
+</script>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  x[slideIndex-1].style.display = "block";
+}
+
+//spela ljud när man kommer in på hemsidan
+
+var audio = document.getElementById("audio");
+var playPauseBTN = document.getElementById("playPauseBTN");
+var count = 0;
+
+function playPause(){
+  if(count == 0){
+    count = 1;
+    audio.play();
+    playPauseBTN.innerHTML =" Pausa";
+  }else{
+    count = 0;
+    audio.pause();
+    playPauseBTN.innerHTML =" Lyssna";
+  }
+}
+
+
+function stop(){
+  playPause()
+  audio.pause();
+  audio.currentTime = 0;
+  playPauseBTN.innerHTML = " Lyssna"
+}
+
+
+
+</script>
+</body>
+</html>

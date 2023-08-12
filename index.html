@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<title>Skeppet</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-metro.css">
+<link rel="stylesheet" href="skeppet.css">
+
+</head>
+  <body class="w3-center">
+    <h2 class="w3-hover-white styrbord-txt" id="btn-1">Köket</h2>
+
+
+
+
+<div class="w3-padding w3-right">
+<button class="tillbaka-txt" id="btn-2">tillbaka</button>
+<button id="pause">Pause</button>
+<button id="restart">Restart</button>
+<h2>Mina saker</h2>
+<button class="kassett-kock1" id="btn-4">Brev av kock</button>
+</div>
+
+
+    <h2 class="w3-hover-white kock1" id="btn-3">Brev</h2>
+    <h1></h1>
+    <script src="skeppet.js"></script>
+
+
+
+
+
+
+    <script>
+
+
+
+
+
+
+
+      $(document).ready(function() {
+        $("#btn-1").click(function() {
+          $(this).hide();
+          $("#btn-3").show(1000);
+        });
+      });
+
+
+//klicka på kassetten!
+
+      $(document).ready(function(){
+        $("#btn-3").click(function(){
+          $("#btn-3").hide();
+          $("#btn-4").show();
+
+
+        });
+      });
+
+
+      $(document).ready(function() {
+        $("#btn-2").click(function() {
+          $("#btn-1").show();
+          $("#btn-3").hide();
+        });
+      });
+
+
+      $(document).ready(function() {
+          var audioElement = document.createElement('audio');
+          audioElement.setAttribute('src', 'Creepypoddlenny.m4a');
+
+          $('#btn-4').click(function() {
+              audioElement.play();
+              $("#status").text("Status: Playing");
+          });
+
+          $('#pause').click(function() {
+              audioElement.pause();
+          });
+
+          $('#restart').click(function() {
+              audioElement.currentTime = 0;
+          });
+      });
+
+
+
+    </script>
+
+
+  </body>
+</html>
